@@ -1,0 +1,21 @@
+/* !!!!!>>>  Main Color Variables to be used on site  <<<!!!!! */
+
+:root {
+	--text-main: #d5ffe4;
+	--bg-main-dark: #252b48;
+}
+
+/* ------>>>  Basic Reset  <<<------ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styles */
+
+body {
+	background-color: var(--bg-main-dark);
+	color: var(--text-main);
+}
