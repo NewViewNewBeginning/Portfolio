@@ -50,8 +50,13 @@ h3 {
 	padding-bottom: 0.5rem;
 }
 
+/* Buttons Style */
+
 .btn {
-	width: 4rem;
+	display: inline-block;
+	height: 3rem;
+	width: 10rem;
+	text-align: center;
 	position: relative;
 	border: 1px solid var(--text-main);
 	border-radius: 5px;
@@ -85,7 +90,11 @@ h3 {
 }
 .btn:hover {
 	color: #252b48;
+	border: 1px solid var(--cta);
+	border-radius: 5px;
 }
+
+/* End Buttons Style */
 
 /* -----Header----- */
 
@@ -167,4 +176,24 @@ section {
 	-moz-border-radius: 6rem 0 6rem 0;
 	-ms-border-radius: 6rem 0 6rem 0;
 	-o-border-radius: 6rem 0 6rem 0;
+}
+
+.home-contact {
+	display: flex;
+	align-items: center;
+}
+
+.fa-brands {
+	font-size: 2.5rem;
+	margin-left: 2rem;
+	margin-top: 2rem;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+}
+
+.fa-brands:hover {
+	color: var(--cta);
 }
