@@ -52,6 +52,14 @@ h3 {
 
 /* Buttons Style */
 
+.btn-section {
+	display: flex;
+	align-items: center;
+}
+.btn-section > *:not(:first-child) {
+	margin-left: 1.2rem;
+}
+
 .btn {
 	display: inline-block;
 	height: 3rem;
@@ -185,14 +193,8 @@ footer {
 	-o-border-radius: 6rem 0 6rem 0;
 }
 
-.home-contact {
-	display: flex;
-	align-items: center;
-}
-
 .fa-brands {
 	font-size: 2.5rem;
-	margin-left: 2rem;
 	margin-top: 2rem;
 	transition: 0.4s;
 	-webkit-transition: 0.4s;
