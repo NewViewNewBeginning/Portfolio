@@ -6,7 +6,7 @@
 	--cta: #00ff22;
 }
 
-/* ------>>>  Basic Reset  <<<------ */
+/* ------>>>  Basic Reset and Default Style  <<<------ */
 
 * {
 	margin: 0;
@@ -20,18 +20,74 @@
 	font-family: "Montserrat", sans-serif;
 }
 
-/* Main Styles */
+/*----->>>> Main Styles  <<<<----- */
 
 body {
 	background-color: var(--bg-main);
 	color: var(--text-main);
+	line-height: 1.5;
 }
 
 a {
 	color: var(--text-main);
 }
 
-/* Header */
+/* Headers/Text Sizes */
+p,
+a {
+	font-size: 1.2rem;
+}
+
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.2rem;
+	padding: 1rem 0;
+}
+h3 {
+	font-size: 1.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.btn {
+	width: 4rem;
+	position: relative;
+	border: 1px solid var(--text-main);
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	padding: 0.5rem;
+	margin-top: 2rem;
+	z-index: 1;
+}
+
+.btn::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--cta);
+	z-index: -1;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4s;
+}
+
+.btn:hover::before {
+	width: 100%;
+}
+.btn:hover {
+	color: #252b48;
+}
+
+/* -----Header----- */
 
 header {
 	position: fixed;
@@ -56,4 +112,59 @@ header {
 	font-size: 1.5rem;
 	font-weight: 600;
 	margin-left: 3rem;
+	transition: 0.2s;
+	-webkit-transition: 0.2s;
+	-moz-transition: 0.2s;
+	-ms-transition: 0.2s;
+	-o-transition: 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a:active {
+	color: var(--cta);
+}
+
+/* Hamburger menu */
+
+.fa-solid.ham-menu {
+	font-size: 2.3rem;
+	cursor: pointer;
+	display: none;
+}
+/* End Hamburger menu */
+
+/* -----End Header----- */
+
+/* Section Styles */
+
+section {
+	height: 100vh;
+	padding: 0 10% 2rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* End Section Styles */
+
+/*----->>>> End Main Styles  <<<<----- */
+
+/* Home Section */
+
+.home {
+	display: flex;
+}
+
+.home-text p {
+	margin: 2rem 0;
+	max-width: 40ch;
+}
+.home-img {
+	max-width: 30%;
+	max-height: 60%;
+	border-radius: 6rem 0 6rem 0;
+	-webkit-border-radius: 6rem 0 6rem 0;
+	-moz-border-radius: 6rem 0 6rem 0;
+	-ms-border-radius: 6rem 0 6rem 0;
+	-o-border-radius: 6rem 0 6rem 0;
 }
