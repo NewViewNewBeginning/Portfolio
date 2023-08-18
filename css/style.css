@@ -156,6 +156,13 @@ section {
 
 /* End Section Styles */
 
+/* Footer */
+
+footer {
+	text-align: center;
+	padding: 1.5rem 0;
+}
+
 /*----->>>> End Main Styles  <<<<----- */
 
 /* Home Section */
@@ -197,3 +204,11 @@ section {
 .fa-brands:hover {
 	color: var(--cta);
 }
+
+/* Start About Section */
+.about {
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+/* End About Section */
