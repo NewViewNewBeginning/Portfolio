@@ -209,8 +209,17 @@ footer {
 
 /* Start About Section */
 .about {
+	background: url(../media/images/about-bg.png) no-repeat;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
 }
 /* End About Section */
+
+.skills {
+	background: url(../media/images/skills-bg.png) no-repeat;
+}
+
+.contact {
+	background: url(../media/images/contact-bg.png) no-repeat;
+}
