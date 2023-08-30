@@ -130,11 +130,20 @@ header {
 .letter-accent {
 	color: var(--cta);
 }
+.main-nav {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+}
 
 .main-nav a {
 	/* font-size: 1.5rem; */
 	font-weight: 600;
 	margin-left: 3rem;
+	display: block;
+	text-align: center;
+	margin: 1rem 0;
 	transition: 0.2s;
 	-webkit-transition: 0.2s;
 	-moz-transition: 0.2s;
@@ -150,9 +159,10 @@ header {
 /* Hamburger menu */
 
 .fa-solid.ham-menu {
-	font-size: 2.3rem;
+	font-size: 2rem;
 	cursor: pointer;
-	display: none;
+	position: absolute;
+	right: 4%;
 }
 /* End Hamburger menu */
 
@@ -191,8 +201,7 @@ footer {
 	max-width: 40ch;
 }
 .home-img {
-	max-width: 30%;
-	max-height: 60%;
+	width: 100%;
 	border-radius: 6rem 0 6rem 0;
 	-webkit-border-radius: 6rem 0 6rem 0;
 	-moz-border-radius: 6rem 0 6rem 0;
@@ -258,4 +267,14 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+	/* Switch to desktop menu */
+	.fa-solid.ham-menu {
+		display: none;
+	}
+	.main-nav {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		gap: 1.2rem;
+	}
 }
