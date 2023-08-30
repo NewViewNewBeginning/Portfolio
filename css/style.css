@@ -35,18 +35,18 @@ a {
 /* Headers/Text Sizes */
 p,
 a {
-	font-size: 1.2rem;
+	font-size: 0.8rem;
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 2rem;
 }
 h2 {
-	font-size: 2.2rem;
+	font-size: 1.5rem;
 	padding: 1rem 0;
 }
 h3 {
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	padding-bottom: 0.5rem;
 }
 
@@ -111,6 +111,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
 	padding: 2rem 10%;
 	display: flex;
 	justify-content: space-between;
@@ -119,6 +120,7 @@ header {
 
 .logo {
 	font-size: 2.5rem;
+	font-weight: 800;
 }
 
 .letter-accent {
@@ -224,4 +226,9 @@ footer {
 .contact {
 	background: url(../media/images/contact-bg.webp) no-repeat center center /
 		cover;
+}
+
+/* Media querry for bigger devices */
+
+@media screen and (min-width: 768px) {
 }
