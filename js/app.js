@@ -34,3 +34,19 @@ document.addEventListener("DOMContentLoaded", function () {
 // 		section.style.backgroundPosition = "center " + backgroundPosition + "px";
 // 	});
 // });
+
+// Get the header element
+let header = document.querySelector("header");
+console.log(header);
+
+// Add an event listener to the window's scroll event
+window.addEventListener("scroll", function () {
+	// If the window has been scrolled more than 0 pixels, add styles
+	if (window.scrollY > 0) {
+		header.style.background = "rgba(0, 0, 0, 0.3)";
+		header.style.backdropFilter = "blur(5px)";
+	} else {
+		header.style.background = "none";
+		header.style.backdropFilter = "none";
+	}
+});
