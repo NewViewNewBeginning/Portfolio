@@ -209,7 +209,7 @@ footer {
 
 /* Start About Section */
 .about {
-	background: url(../media/images/about-bg.png) no-repeat;
+	background: url(../media/images/about-bg.webp) no-repeat center center / cover;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
@@ -217,9 +217,11 @@ footer {
 /* End About Section */
 
 .skills {
-	background: url(../media/images/skills-bg.png) no-repeat;
+	background: url(../media/images/skills-bg.webp) no-repeat center center /
+		cover;
 }
 
 .contact {
-	background: url(../media/images/contact-bg.png) no-repeat;
+	background: url(../media/images/contact-bg.webp) no-repeat center center /
+		cover;
 }
