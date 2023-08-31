@@ -331,7 +331,7 @@ footer {
 		width: 160px;
 	}
 	.logo-img {
-		width: 70%;
+		width: 90%;
 	}
 	section {
 		flex-direction: row;
@@ -360,4 +360,7 @@ footer {
 }
 
 @media screen and (min-width: 968px) {
+	.logo-img {
+		width: 100%;
+	}
 }
