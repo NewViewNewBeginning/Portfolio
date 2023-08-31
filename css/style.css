@@ -34,7 +34,8 @@ a {
 
 /* Headers/Text Sizes */
 p,
-a {
+a,
+li {
 	font-size: 0.8rem;
 }
 
@@ -143,7 +144,6 @@ header {
 	top: 0;
 	left: -100%;
 	width: 100%;
-	height: 60vh;
 	background: rgba(0, 0, 0, 0.8);
 	backdrop-filter: blur(8px);
 	transition: left 0.3s;
@@ -194,9 +194,7 @@ header {
 
 section {
 	position: relative;
-	/* max-width: 1444px; */
-	margin: 0 auto;
-	height: 100vh;
+	min-height: 100vh;
 	padding: 0 5% 2rem;
 	display: flex;
 	flex-direction: column;
@@ -264,11 +262,25 @@ footer {
 /* Start About Section */
 .about {
 	background: url(../media/images/about-bg.webp) no-repeat center center / cover;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
 }
 /* End About Section */
+
+/* Start Education Section */
+
+.edu-half {
+	border-left: 2px solid var(--cta);
+	padding: 2rem;
+	border-radius: 2rem;
+	-webkit-border-radius: 2rem;
+	-moz-border-radius: 2rem;
+	-ms-border-radius: 2rem;
+	-o-border-radius: 2rem;
+}
+.edu-card {
+	margin-top: 0.5rem;
+}
+
+/* End Education Section */
 
 .skills {
 	background: url(../media/images/skills-bg.webp) no-repeat center center /
@@ -300,7 +312,8 @@ footer {
 	}
 
 	p,
-	a {
+	a,
+	li {
 		font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.2rem);
 	}
 	.btn {
@@ -357,6 +370,7 @@ footer {
 	.icons-wrapper {
 		text-align: left;
 	}
+	/* Education Section */
 }
 
 @media screen and (min-width: 968px) {
