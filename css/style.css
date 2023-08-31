@@ -38,8 +38,7 @@ a {
 	font-size: 0.8rem;
 }
 
-h1,
-.logo {
+h1 {
 	font-size: 2rem;
 }
 h2 {
@@ -112,7 +111,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 1rem 10%;
+	padding: 0.5rem 10%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -120,9 +119,15 @@ header {
 	transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-.logo {
-	/* font-size: 2.5rem; */
-	font-weight: 800;
+.logo-img {
+	width: 60%;
+	border: 3px solid #00ff22;
+	padding: 3%;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
 }
 
 .letter-accent {
@@ -150,7 +155,7 @@ header {
 	left: 0;
 }
 .main-nav a {
-	/* font-size: 1.5rem; */
+	font-size: 1rem;
 	font-weight: 600;
 	margin-left: 3rem;
 	display: block;
@@ -262,8 +267,7 @@ footer {
 
 /* Clamps for fonts so they will rise with bigger screen resolutions */
 @media (min-width: 380px) {
-	h1,
-	.logo {
+	h1 {
 		font-size: clamp(2rem, 2rem + 1vw, 3rem);
 	}
 
@@ -271,9 +275,11 @@ footer {
 		font-size: clamp(1.5rem, 1.5rem + 0.7vw, 2.2rem);
 	}
 
-	h3,
-	.main-nav a {
+	h3 {
 		font-size: clamp(1.1rem, 1.1rem + 0.4vw, 1.5rem);
+	}
+	.main-nav a {
+		font-size: clamp(1.3rem, 1.1rem + 0.2vw, 1.7rem);
 	}
 
 	p,
@@ -301,5 +307,8 @@ footer {
 		/* background-color: transparent; */
 		background: none;
 		backdrop-filter: none;
+	}
+	.logo-img {
+		width: 100%;
 	}
 }
