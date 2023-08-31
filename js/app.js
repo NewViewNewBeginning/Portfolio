@@ -6,35 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	yearElement.textContent = currentYear;
 });
 
-// Parallax to 3 sections
-
-// document.addEventListener("scroll", function () {
-// 	let sections = document.querySelectorAll(".parallax-section");
-
-// 	Array.prototype.forEach.call(sections, function (section) {
-// 		let windowScrollTop = window.scrollY,
-// 			elementOffsetTop = section.offsetTop,
-// 			windowHeight = window.innerHeight,
-// 			elementHeight = section.offsetHeight,
-// 			viewPortTop = windowScrollTop - elementOffsetTop + windowHeight,
-// 			viewPortBottom = windowScrollTop + windowHeight - elementOffsetTop,
-// 			backgroundPosition = 0;
-
-// 		// Check if the element is in the viewport
-// 		if (
-// 			(viewPortTop > 0 && viewPortTop < elementHeight) ||
-// 			(viewPortBottom > 0 && viewPortBottom < windowHeight)
-// 		) {
-// 			backgroundPosition = -(
-// 				(windowScrollTop - elementOffsetTop) *
-// 				parseFloat(section.getAttribute("data-speed"))
-// 			);
-// 		}
-
-// 		section.style.backgroundPosition = "center " + backgroundPosition + "px";
-// 	});
-// });
-
 // Get the header element
 let header = document.querySelector("header");
 console.log(header);
@@ -43,10 +14,51 @@ console.log(header);
 window.addEventListener("scroll", function () {
 	// If the window has been scrolled more than 0 pixels, add styles
 	if (window.scrollY > 0) {
-		header.style.background = "rgba(0, 0, 0, 0.3)";
-		header.style.backdropFilter = "blur(5px)";
+		header.style.background = "rgba(0, 0, 0, 0.4)";
+		header.style.backdropFilter = "blur(7px)";
 	} else {
 		header.style.background = "none";
 		header.style.backdropFilter = "none";
 	}
 });
+
+// hamburger
+
+document.querySelector(".fa-bars").addEventListener("click", function () {
+	document.querySelector(".main-nav").classList.add("open");
+	this.style.display = "none";
+	document.querySelector(".fa-xmark").style.display = "block";
+});
+
+document.querySelector(".fa-xmark").addEventListener("click", function () {
+	document.querySelector(".main-nav").classList.remove("open");
+	this.style.display = "none";
+	document.querySelector(".fa-bars").style.display = "block";
+});
+
+let lastScrollTop = 0; // Zmienna przechowująca ostatnią pozycję skrolowania
+
+window.addEventListener("scroll", function () {
+	let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+	// Jeśli przewijanie następuje w dół
+	if (document.querySelector(".main-nav").classList.contains("open")) {
+		document.querySelector(".fa-xmark").click(); // "Kliknij" ikonę x, aby zamknąć menu
+	}
+
+	// Aktualizuj ostatnią pozycję skrolowania
+	lastScrollTop = scrollTop;
+});
+function checkWindowWidth() {
+	// Jeśli szerokość okna jest większa niż 768px
+	if (window.innerWidth >= 768) {
+		document.querySelector(".fa-bars").style.display = ""; // Usuń własność display
+		document.querySelector(".fa-xmark").style.display = "";
+	}
+}
+
+// Wywołaj funkcję po załadowaniu strony
+checkWindowWidth();
+
+// Dodaj zdarzenie resize dla okna
+window.addEventListener("resize", checkWindowWidth);

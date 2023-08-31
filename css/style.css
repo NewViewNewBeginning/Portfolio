@@ -112,8 +112,6 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	/* background: rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(5px); */
 	padding: 1rem 10%;
 	display: flex;
 	justify-content: space-between;
@@ -130,13 +128,27 @@ header {
 .letter-accent {
 	color: var(--cta);
 }
-.main-nav {
+/* .main-nav {
 	position: absolute;
 	top: 100%;
 	left: 0;
 	width: 100%;
+} */
+.main-nav {
+	position: fixed;
+	padding-top: 5rem;
+	top: 0;
+	left: -100%;
+	width: 100%; /* Możesz dostosować szerokość menu według potrzeb */
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(8px);
+	transition: left 0.3s;
+	overflow-y: auto;
 }
-
+.main-nav.open {
+	left: 0;
+}
 .main-nav a {
 	/* font-size: 1.5rem; */
 	font-weight: 600;
@@ -158,11 +170,15 @@ header {
 
 /* Hamburger menu */
 
-.fa-solid.ham-menu {
+.ham-menu {
 	font-size: 2rem;
 	cursor: pointer;
 	position: absolute;
 	right: 4%;
+}
+.fa-xmark.ham-menu {
+	display: none;
+	z-index: 20;
 }
 /* End Hamburger menu */
 
@@ -268,13 +284,22 @@ footer {
 
 @media screen and (min-width: 768px) {
 	/* Switch to desktop menu */
-	.fa-solid.ham-menu {
+
+	header .fa-solid.ham-menu {
 		display: none;
 	}
+
 	.main-nav {
 		position: relative;
+		padding-top: 0;
+		left: 0; /* reset */
+		width: auto; /* reset */
+		height: auto;
 		display: flex;
 		justify-content: flex-end;
 		gap: 1.2rem;
+		/* background-color: transparent; */
+		background: none;
+		backdrop-filter: none;
 	}
 }
