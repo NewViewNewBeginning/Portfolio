@@ -111,7 +111,7 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 0.5rem 10%;
+	padding: 0.5rem 4%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -298,16 +298,24 @@ footer {
 	.main-nav {
 		position: relative;
 		padding-top: 0;
-		left: 0; /* reset */
-		width: auto; /* reset */
+		left: 0;
+		width: auto;
 		height: auto;
 		display: flex;
 		justify-content: flex-end;
 		gap: 1.2rem;
-		/* background-color: transparent; */
 		background: none;
 		backdrop-filter: none;
 	}
+	.logo-link {
+		width: 160px;
+	}
+	.logo-img {
+		width: 70%;
+	}
+}
+
+@media screen and (min-width: 968px) {
 	.logo-img {
 		width: 100%;
 	}
