@@ -54,7 +54,7 @@ h3 {
 
 .btn-section {
 	display: flex;
-	align-items: center;
+	justify-content: center;
 }
 .btn-section > *:not(:first-child) {
 	margin-left: 1.2rem;
@@ -62,8 +62,7 @@ h3 {
 
 .btn {
 	display: inline-block;
-	height: 3rem;
-	width: 10rem;
+	width: 7rem;
 	text-align: center;
 	position: relative;
 	border: 1px solid var(--text-main);
@@ -117,6 +116,10 @@ header {
 	align-items: center;
 	z-index: 10;
 	transition: background 0.3s ease, backdrop-filter 0.3s ease;
+	-webkit-transition: background 0.3s ease, backdrop-filter 0.3s ease;
+	-moz-transition: background 0.3s ease, backdrop-filter 0.3s ease;
+	-ms-transition: background 0.3s ease, backdrop-filter 0.3s ease;
+	-o-transition: background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .logo-img {
@@ -133,19 +136,14 @@ header {
 .letter-accent {
 	color: var(--cta);
 }
-/* .main-nav {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-} */
+
 .main-nav {
 	position: fixed;
 	padding-top: 5rem;
 	top: 0;
 	left: -100%;
-	width: 100%; /* Możesz dostosować szerokość menu według potrzeb */
-	height: 100vh;
+	width: 100%;
+	height: 60vh;
 	background: rgba(0, 0, 0, 0.8);
 	backdrop-filter: blur(8px);
 	transition: left 0.3s;
@@ -153,6 +151,9 @@ header {
 }
 .main-nav.open {
 	left: 0;
+}
+.main-nav.open a {
+	padding-bottom: 1rem;
 }
 .main-nav a {
 	font-size: 1rem;
@@ -192,8 +193,11 @@ header {
 /* Section Styles */
 
 section {
+	position: relative;
+	max-width: 1444px;
+	margin: 0 auto;
 	height: 100vh;
-	padding: 0 10% 2rem;
+	padding: 0 5% 2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -213,23 +217,25 @@ footer {
 
 /* Home Section */
 
-.home {
-	display: flex;
-}
-
 .home-text p {
 	margin: 2rem 0;
 	max-width: 40ch;
 }
 .home-img {
-	width: 100%;
-	border-radius: 6rem 0 6rem 0;
-	-webkit-border-radius: 6rem 0 6rem 0;
-	-moz-border-radius: 6rem 0 6rem 0;
-	-ms-border-radius: 6rem 0 6rem 0;
-	-o-border-radius: 6rem 0 6rem 0;
+	width: 90%;
 }
 
+.icons-wrapper {
+	text-align: center;
+}
+
+.icons-wrapper a {
+	margin-right: 2rem;
+}
+
+.icons-wrapper a:last-child {
+	margin-right: 0;
+}
 .fa-brands {
 	font-size: 2.5rem;
 	margin-top: 2rem;
@@ -286,6 +292,9 @@ footer {
 	a {
 		font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.2rem);
 	}
+	.btn {
+		width: 10rem;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -312,6 +321,30 @@ footer {
 	}
 	.logo-img {
 		width: 70%;
+	}
+	section {
+		flex-direction: row;
+	}
+	.home-img {
+		order: 1;
+	}
+	.home-text {
+		position: absolute;
+		width: 50%;
+		left: 1rem;
+		background: rgba(37, 43, 72, 0.6);
+		padding: 1rem;
+		border-radius: 1rem;
+		-webkit-border-radius: 1rem;
+		-moz-border-radius: 1rem;
+		-ms-border-radius: 1rem;
+		-o-border-radius: 1rem;
+	}
+	.btn-section {
+		justify-content: left;
+	}
+	.icons-wrapper {
+		text-align: left;
 	}
 }
 
