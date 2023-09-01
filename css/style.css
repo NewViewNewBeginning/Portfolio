@@ -371,6 +371,11 @@ footer {
 		text-align: left;
 	}
 	/* Education Section */
+	.card-container {
+		display: flex;
+		padding: 1rem 0;
+	}
+	/* Skills */
 }
 
 @media screen and (min-width: 968px) {
