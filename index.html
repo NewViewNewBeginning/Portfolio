@@ -232,7 +232,39 @@
     <!-- Start Contact -->
     <section class="contact" id="contact">
         <div class="wrapper">
+            <h2>Contact Me</h2>
+            <form action="/submit" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+
+                <div>
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
             <div class="btn-section">
+                <a class="btn" href="#">Send</a>
                 <a class="btn" href="#home">Back to top</a>
             </div>
         </div>
