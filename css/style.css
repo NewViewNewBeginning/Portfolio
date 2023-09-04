@@ -449,3 +449,22 @@ input[type="submit"]:hover {
 		width: 48%; /* slightly less than half to accommodate for spacing */
 	}
 }
+
+.proj-container {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(2, 1fr);
+}
+.proj img {
+	width: 100%;
+	height: auto;
+	max-width: 100%; /* Ensures the image doesn't exceed its container */
+	display: block; /* Removes any whitespace below the image */
+}
+
+/* Desktop */
+@media (min-width: 766px) {
+	.proj-container {
+		grid-template-columns: repeat(3, 1fr); /* 3 columns */
+	}
+}
