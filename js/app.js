@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Get the header element
 let header = document.querySelector("header");
-console.log(header);
 
 // Add an event listener to the window's scroll event
 window.addEventListener("scroll", function () {
