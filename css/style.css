@@ -396,3 +396,56 @@ footer p {
 		font-size: 2rem;
 	}
 }
+
+form {
+	max-width: 600px; /* you can adjust this if needed */
+	margin: 0 auto;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+input[type="submit"] {
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* Desktop styling */
+@media (min-width: 766px) {
+	label {
+		margin-bottom: 4px;
+	}
+
+	/* Creating a flex container for two inline inputs */
+	.input-group {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	/* Adjusting the widths for inline inputs */
+	.input-group input[type="text"],
+	.input-group input[type="email"] {
+		width: 48%; /* slightly less than half to accommodate for spacing */
+	}
+}
