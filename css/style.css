@@ -260,7 +260,9 @@ footer p {
 /* ----------------------------------------------- */
 
 /* ----->>>> Start Home Section <<<<----- */
-
+/* section .home {
+	padding-top: 7rem;
+} */
 .home-text p {
 	margin: 2rem 0;
 	max-width: 40ch;
@@ -392,6 +394,18 @@ footer p {
 
 /* ----->>>>  Start Projects Section  <<<<----- */
 
+.proj-container {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+.proj img {
+	width: 100%;
+	height: auto;
+	max-width: 100%; /* Ensures the image doesn't exceed its container */
+	display: block; /* Removes any whitespace below the image */
+}
+
 /* ----->>>> End Projects Section <<<<----- */
 
 /* ------------------------------------------ */
@@ -468,7 +482,9 @@ footer p {
 	}
 
 	/* Home section */
-
+	section.home {
+		padding-top: 3rem;
+	}
 	.home-img {
 		order: 1;
 	}
