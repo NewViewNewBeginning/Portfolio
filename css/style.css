@@ -470,7 +470,7 @@ input[type="submit"]:hover {
 }
 
 :root {
-	--marquee-width: 80vw;
+	--marquee-width: 100%;
 	--marquee-height: 40vh;
 	/* --marquee-elements: 12; */ /* defined with JavaScript */
 	--marquee-elements-displayed: 4;
@@ -483,8 +483,14 @@ input[type="submit"]:hover {
 .marquee {
 	width: var(--marquee-width);
 	height: var(--marquee-height);
+	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
+	-moz-border-radius: 1rem;
+	-ms-border-radius: 1rem;
+	-o-border-radius: 1rem;
 }
 .marquee:before,
 .marquee:after {
@@ -495,14 +501,18 @@ input[type="submit"]:hover {
 	content: "";
 	z-index: 1;
 }
-/* .marquee:before {
+.marquee:before {
 	left: 0;
-	background: linear-gradient(to right, transparent 100%);
+	background: linear-gradient(
+		to right,
+		rgba(69, 67, 67, 0.7),
+		transparent 100%
+	);
 }
 .marquee:after {
 	right: 0;
-	background: linear-gradient(to left, transparent 100%);
-} */
+	background: linear-gradient(to left, rgba(69, 67, 67, 0.7), transparent 100%);
+}
 .marquee-content {
 	list-style: none;
 	height: 100%;
@@ -536,8 +546,7 @@ input[type="submit"]:hover {
 .marquee-content li img {
 	width: 100%;
 	height: auto;
-	/* border: 2px solid #eee; */
-	padding-right: 3rem;
+	padding-right: 1rem;
 }
 
 @media (max-width: 600px) {
