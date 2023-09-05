@@ -1,4 +1,4 @@
-/* !!!!!>>>  Main Color Variables to be used on site  <<<!!!!! */
+/* !!!!!>>> Main Color Variables to be used on site <<<!!!!! */
 
 :root {
 	--text-main: #d5ffe4;
@@ -17,6 +17,7 @@
 
 /* ------>>>  Basic Reset and Default Style  <<<------ */
 
+/* Reset */
 * {
 	margin: 0;
 	padding: 0;
@@ -28,8 +29,11 @@
 	list-style: none;
 	font-family: "Montserrat", sans-serif;
 }
+/* End Reset */
 
-/*----->>>> Main Styles  <<<<----- */
+/* -------------------------------- */
+
+/* ----->>>> Start Main Styles  <<<<----- */
 
 body {
 	background-color: var(--bg-main);
@@ -41,7 +45,7 @@ a {
 	color: var(--text-main);
 }
 
-/* Headers/Text Sizes */
+/* Start Headers/Text Sizes */
 p,
 a,
 li {
@@ -59,8 +63,11 @@ h3 {
 	font-size: 1.1rem;
 	padding-bottom: 0.5rem;
 }
+/* ----->>>> End Headers/Text Sizes <<<<----- */
 
-/* Buttons Style */
+/* ----------------------------------------- */
+
+/* ----->>>> Start Buttons Style  <<<<----- */
 
 .btn-section {
 	display: flex;
@@ -111,9 +118,11 @@ h3 {
 	border-radius: 5px;
 }
 
-/* End Buttons Style */
+/* ----->>>> End Buttons Style  <<<<----- */
 
-/* -----Header----- */
+/* ----------------------------------------- */
+
+/* ----->>>> Start Header/Menu Style  <<<<----- */
 
 header {
 	position: fixed;
@@ -183,7 +192,7 @@ header {
 	color: var(--cta);
 }
 
-/* Hamburger menu */
+/* --->>  Start Hamburger menu  <<--- */
 
 .ham-menu {
 	font-size: 2rem;
@@ -195,11 +204,13 @@ header {
 	display: none;
 	z-index: 20;
 }
-/* End Hamburger menu */
+/* --->> End Hamburger menu <<--- */
 
-/* -----End Header----- */
+/* ----->>>> End Header/Menu Style  <<<<----- */
 
-/* Section Styles */
+/* ------------------------------------------- */
+
+/* ----->>>> Sections Main Styles <<<<----- */
 
 section {
 	position: relative;
@@ -222,9 +233,9 @@ section {
 	-o-border-radius: 1rem;
 }
 
-/* End Section Styles */
+/* ----->>>> End Sections Main Styles <<<<----- */
 
-/* Footer */
+/* ----->>>> Footer Style <<<<----- */
 
 footer {
 	display: flex;
@@ -241,9 +252,14 @@ footer p {
 	text-align: center;
 }
 
-/*----->>>> End Main Styles  <<<<----- */
+/* /* ----->>>> End Footer Style <<<<----- */
+*/
 
-/* Home Section */
+/*----->>>> !!!! End Main Styles !!!! <<<<----- */
+
+/* ----------------------------------------------- */
+
+/* ----->>>> Start Home Section <<<<----- */
 
 .home-text p {
 	margin: 2rem 0;
@@ -277,8 +293,11 @@ footer p {
 .fa-brands:hover {
 	color: var(--cta);
 }
+/* ----->>>> End Home Section <<<<----- */
 
-/* Start About Section */
+/* -------------------------------------- */
+
+/* ----->>>> Start About Section <<<<----- */
 .about {
 	background: url(../media/images/about-bg.webp) no-repeat center center / cover;
 }
@@ -375,14 +394,22 @@ footer p {
 
 /* ----->>>> End Projects Section <<<<----- */
 
+/* ------------------------------------------ */
+
+/* ----->>>>  Start Contact Section  <<<<----- */
+
 .contact {
 	background: url(../media/images/contact-bg.webp) no-repeat center center /
 		cover;
 }
 
-/* Media querry for bigger devices */
+/* ----->>>> End Contact Section <<<<----- */
 
-/* Clamps for fonts so they will rise with bigger screen resolutions */
+/* ------------------------------------------- */
+
+/* ----->>>> Media querry for bigger devices <<<<----- */
+
+/* !!Clamps for fonts so they will rise with bigger screen resolutions!! */
 @media (min-width: 380px) {
 	h1 {
 		font-size: clamp(2rem, 2rem + 1vw, 3rem);
@@ -409,9 +436,10 @@ footer p {
 	}
 }
 
-@media screen and (min-width: 768px) {
-	/* Switch to desktop menu */
+/* ----->>>> Switch to Desktop View <<<<---- */
 
+@media screen and (min-width: 768px) {
+	/* Desktop menu */
 	header .fa-solid.ham-menu {
 		display: none;
 	}
@@ -434,9 +462,13 @@ footer p {
 	.logo-img {
 		width: 90%;
 	}
+	/* end desktop menu */
 	section {
 		flex-direction: row;
 	}
+
+	/* Home section */
+
 	.home-img {
 		order: 1;
 	}
@@ -458,6 +490,9 @@ footer p {
 	.icons-wrapper {
 		text-align: left;
 	}
+
+	/* end home section */
+
 	/* Education Section */
 	.card-container {
 		display: flex;
@@ -473,7 +508,7 @@ footer p {
 		--marquee-elements-displayed: 4;
 	}
 
-	/* Projects */
+	/* Projects Section */
 	.proj-container {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -487,6 +522,8 @@ footer p {
 		font-size: 2rem;
 	}
 }
+
+/* End of Styles */
 
 form {
 	max-width: 600px; /* you can adjust this if needed */
