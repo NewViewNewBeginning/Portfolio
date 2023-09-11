@@ -12,7 +12,7 @@ let header = document.querySelector("header");
 // Add an event listener to the window's scroll event
 window.addEventListener("scroll", function () {
 	// If the window has been scrolled more than 0 pixels, add styles
-	if (window.scrollY > 0) {
+	if (window.scrollY > 20) {
 		header.style.background = "rgba(0, 0, 0, 0.4)";
 		header.style.backdropFilter = "blur(7px)";
 	} else {
@@ -21,21 +21,20 @@ window.addEventListener("scroll", function () {
 	}
 });
 
-// hamburger
+// hamburger menu
 
 document.querySelector(".fa-bars").addEventListener("click", function () {
 	document.querySelector(".main-nav").classList.add("open");
 	this.style.display = "none";
 	document.querySelector(".fa-xmark").style.display = "block";
 });
-
 document.querySelector(".fa-xmark").addEventListener("click", function () {
 	document.querySelector(".main-nav").classList.remove("open");
 	this.style.display = "none";
 	document.querySelector(".fa-bars").style.display = "block";
 });
 
-let lastScrollTop = 0; // Zmienna przechowująca ostatnią pozycję skrolowania
+let lastScrollTop = 0;
 
 window.addEventListener("scroll", function () {
 	let scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -44,8 +43,6 @@ window.addEventListener("scroll", function () {
 	if (document.querySelector(".main-nav").classList.contains("open")) {
 		document.querySelector(".fa-xmark").click(); // "Kliknij" ikonę x, aby zamknąć menu
 	}
-
-	// Aktualizuj ostatnią pozycję skrolowania
 	lastScrollTop = scrollTop;
 });
 function checkWindowWidth() {
@@ -56,11 +53,11 @@ function checkWindowWidth() {
 	}
 }
 
-// Wywołaj funkcję po załadowaniu strony
 checkWindowWidth();
 
-// Dodaj zdarzenie resize dla okna
 window.addEventListener("resize", checkWindowWidth);
+
+// Skills carousel
 
 const root = document.documentElement;
 const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
@@ -73,3 +70,5 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for (let i = 0; i < marqueeElementsDisplayed; i++) {
 	marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 }
+
+// Basic Form validation

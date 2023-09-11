@@ -82,7 +82,7 @@ h3 {
 .submit-btn {
 	background-color: transparent;
 	color: var(--text-main);
-	width: 100px;
+	cursor: pointer;
 }
 
 .btn,
@@ -644,6 +644,19 @@ textarea:-moz-autofill {
 		display: flex;
 		justify-content: space-between;
 	}
+	.input-box input,
+	textarea {
+		font-size: 1.2rem;
+	}
+	.input-box input:is(:focus, :valid) ~ label,
+	textarea:is(:focus, :valid) ~ label {
+		font-size: 0.8rem;
+		margin-top: -1px;
+	}
+	.input-box label {
+		translate: 14px 14px;
+	}
+
 	.input-group .input-box {
 		width: 48%;
 	}
