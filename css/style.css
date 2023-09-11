@@ -279,16 +279,16 @@ footer p {
 }
 
 /* /* ----->>>> End Footer Style <<<<----- */
-*/
 
 /*----->>>> !!!! End Main Styles !!!! <<<<----- */
 
 /* ----------------------------------------------- */
 
 /* ----->>>> Start Home Section <<<<----- */
-/* section .home {
+
+section .home {
 	padding-top: 7rem;
-} */
+}
 .home-text p {
 	margin: 2rem 0;
 	max-width: 40ch;
