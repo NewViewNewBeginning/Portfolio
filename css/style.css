@@ -245,6 +245,12 @@ section {
 	-o-border-radius: 1rem;
 }
 
+.about,
+.education,
+.projects {
+	scroll-margin-top: 80px;
+}
+
 /* ----->>>> End Sections Main Styles <<<<----- */
 
 /* ----->>>> Footer Style <<<<----- */
