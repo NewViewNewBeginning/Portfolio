@@ -416,6 +416,7 @@ footer p {
 .contact {
 	background: url(../media/images/contact-bg.webp) no-repeat center center /
 		cover;
+	background-position: -700px center;
 }
 .contact .wrapper {
 	width: 100%;
@@ -427,7 +428,7 @@ footer p {
 
 .input-box input,
 textarea {
-	min-width: 100%;
+	width: 100%;
 	color: var(--text-main);
 	padding: 0.8rem;
 	margin-bottom: 1.5rem;
@@ -467,7 +468,6 @@ textarea:is(:focus, :valid) ~ label {
 
 .input-box label {
 	position: absolute;
-	font-size: 0.8rem;
 	top: 0;
 	left: 0;
 	translate: 10px 10px;
@@ -492,24 +492,30 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: #45a049;
 } */
-/* .input-group {
-	width: 100%;
-} */
-/* Desktop styling */
-/* @media (min-width: 766px) {
-	label {
-		margin-bottom: 4px;
+/* 
+Desktop styling  */
+@media (min-width: 766px) {
+	.contact {
+		background-position: center;
+	}
+	.contact .wrapper {
+		max-width: 1000px;
 	}
 	.input-group {
 		display: flex;
 		justify-content: space-between;
 	}
-
-	.input-group input[type="text"],
-	.input-group input[type="email"] {
+	.input-group .input-box {
 		width: 48%;
 	}
-} */
+	label {
+		font-size: 1.2rem;
+	}
+	.input-box input {
+		padding: 1rem;
+	}
+}
+
 /* ----->>>> End Contact Section <<<<----- */
 
 /* ------------------------------------------- */
