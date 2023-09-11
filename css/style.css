@@ -440,6 +440,7 @@ footer p {
 .input-box input,
 textarea {
 	width: 100%;
+	font-size: 1rem;
 	color: var(--text-main);
 	padding: 0.8rem;
 	margin-bottom: 1.5rem;
@@ -474,7 +475,9 @@ textarea:is(:focus, :valid) ~ label {
 	background: var(--bg-main);
 	border-left: 2px solid var(--cta);
 	border-right: 2px solid var(--cta);
+	margin-top: 6px;
 	padding: 0 0.5rem;
+	font-size: 0.6rem;
 }
 
 .input-box label {
@@ -490,22 +493,30 @@ textarea:is(:focus, :valid) ~ label {
 	-o-transition: 0.5s;
 }
 
-/* input[type="submit"] {
-	padding: 10px 20px;
-	background-color: #4caf50;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-} */
+/* Change the white text for autofilled input */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+	-webkit-text-fill-color: var(--cta);
+}
 
-/* input[type="submit"]:hover {
-	background-color: #45a049;
-} */
+/* Change background for autofilled input */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill:active {
+	transition: background-color 5000s ease-in-out 0s;
+	-webkit-box-shadow: 0 0 0 30px var(--trasparent-bg) inset;
+}
 
-/* 
-Desktop styling  */
-@media (min-width: 766px) {
+/* Adjusting for Firefox */
+input:-moz-autofill,
+textarea:-moz-autofill {
+	background-color: transparent;
+	color: var(--cta);
 }
 
 /* ----->>>> End Contact Section <<<<----- */
