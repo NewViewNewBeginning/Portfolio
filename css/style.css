@@ -49,7 +49,8 @@ a {
 /* Start Headers/Text Sizes */
 p,
 a,
-li {
+li,
+.submit-btn {
 	font-size: 0.8rem;
 }
 
@@ -78,7 +79,14 @@ h3 {
 	margin-left: 1.2rem;
 }
 
-.btn {
+.submit-btn {
+	background-color: transparent;
+	color: var(--text-main);
+	width: 100px;
+}
+
+.btn,
+.submit-btn {
 	display: inline-block;
 	width: 7rem;
 	text-align: center;
@@ -94,7 +102,8 @@ h3 {
 	z-index: 1;
 }
 
-.btn::before {
+.btn::before,
+.submit-btn::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -110,10 +119,12 @@ h3 {
 	-o-transition: 0.4s;
 }
 
-.btn:hover::before {
+.btn:hover::before,
+.submit-btn:hover::before {
 	width: 100%;
 }
-.btn:hover {
+.btn:hover,
+.submit-btn:hover {
 	color: #252b48;
 	border: 1px solid var(--cta);
 	border-radius: 5px;
@@ -479,41 +490,22 @@ textarea:is(:focus, :valid) ~ label {
 	-o-transition: 0.5s;
 }
 
-/*  
-input[type="submit"] {
+/* input[type="submit"] {
 	padding: 10px 20px;
 	background-color: #4caf50;
 	color: #fff;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-}
+} */
 
-input[type="submit"]:hover {
+/* input[type="submit"]:hover {
 	background-color: #45a049;
 } */
+
 /* 
 Desktop styling  */
 @media (min-width: 766px) {
-	.contact {
-		background-position: center;
-	}
-	.contact .wrapper {
-		max-width: 1000px;
-	}
-	.input-group {
-		display: flex;
-		justify-content: space-between;
-	}
-	.input-group .input-box {
-		width: 48%;
-	}
-	label {
-		font-size: 1.2rem;
-	}
-	.input-box input {
-		padding: 1rem;
-	}
 }
 
 /* ----->>>> End Contact Section <<<<----- */
@@ -541,10 +533,12 @@ Desktop styling  */
 
 	p,
 	a,
-	li {
+	li,
+	.submit-btn {
 		font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.2rem);
 	}
-	.btn {
+	.btn,
+	.submit-btn {
 		width: 10rem;
 	}
 }
@@ -626,6 +620,27 @@ Desktop styling  */
 	/* Projects Section */
 	.proj-container {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	/* Contact Section */
+	.contact {
+		background-position: center;
+	}
+	.contact .wrapper {
+		max-width: 1000px;
+	}
+	.input-group {
+		display: flex;
+		justify-content: space-between;
+	}
+	.input-group .input-box {
+		width: 48%;
+	}
+	label {
+		font-size: 1.2rem;
+	}
+	.input-box input {
+		padding: 1rem;
 	}
 }
 
