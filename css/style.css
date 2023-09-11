@@ -4,6 +4,7 @@
 	--text-main: #d5ffe4;
 	--bg-main: #252b48;
 	--cta: #00ff22;
+	--trasparent-bg: rgba(37, 43, 72, 0.6);
 
 	/* Skills slider with icons */
 	--marquee-width: 100%;
@@ -224,7 +225,7 @@ section {
 .wrapper {
 	margin: 0 auto;
 	max-width: 1444px;
-	background: rgba(37, 43, 72, 0.6);
+	background: var(--trasparent-bg);
 	padding: 1rem;
 	border-radius: 1rem;
 	-webkit-border-radius: 1rem;
@@ -416,7 +417,99 @@ footer p {
 	background: url(../media/images/contact-bg.webp) no-repeat center center /
 		cover;
 }
+.contact .wrapper {
+	width: 100%;
+}
 
+.input-box {
+	position: relative;
+}
+
+.input-box input,
+textarea {
+	min-width: 100%;
+	color: var(--text-main);
+	padding: 0.8rem;
+	margin-bottom: 1.5rem;
+	border: none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	outline: 2px solid var(--text-main);
+	background-color: transparent;
+	transition: outline-color 500ms;
+	-webkit-transition: outline-color 500ms;
+	-moz-transition: outline-color 500ms;
+	-ms-transition: outline-color 500ms;
+	-o-transition: outline-color 500ms;
+}
+
+.input-box input:is(:focus, :valid),
+textarea:is(:focus, :valid) {
+	outline-color: var(--cta);
+	color: var(--cta);
+}
+.input-box input:is(:focus, :valid) ~ label,
+textarea:is(:focus, :valid) ~ label {
+	transform: translateX(0.5rem) translateY(-1.5rem);
+	-webkit-transform: translateX(0.5rem) translateY(-1.5rem);
+	-moz-transform: translateX(0.5rem) translateY(-1.5rem);
+	-ms-transform: translateX(0.5rem) translateY(-1.5rem);
+	-o-transform: translateX(0.5rem) translateY(-1.5rem);
+	color: var(--cta);
+	background: var(--bg-main);
+	border-left: 2px solid var(--cta);
+	border-right: 2px solid var(--cta);
+	padding: 0 0.5rem;
+}
+
+.input-box label {
+	position: absolute;
+	font-size: 0.8rem;
+	top: 0;
+	left: 0;
+	translate: 10px 10px;
+	pointer-events: none;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+}
+
+/*  
+input[type="submit"] {
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+} */
+/* .input-group {
+	width: 100%;
+} */
+/* Desktop styling */
+/* @media (min-width: 766px) {
+	label {
+		margin-bottom: 4px;
+	}
+	.input-group {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.input-group input[type="text"],
+	.input-group input[type="email"] {
+		width: 48%;
+	}
+} */
 /* ----->>>> End Contact Section <<<<----- */
 
 /* ------------------------------------------- */
@@ -540,56 +633,3 @@ footer p {
 }
 
 /* End of Styles */
-
-form {
-	max-width: 600px; /* you can adjust this if needed */
-	margin: 0 auto;
-}
-
-label {
-	display: block;
-	margin-bottom: 8px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-	width: 90%;
-	padding: 10px;
-	margin-bottom: 20px;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-}
-
-input[type="submit"] {
-	padding: 10px 20px;
-	background-color: #4caf50;
-	color: #fff;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-input[type="submit"]:hover {
-	background-color: #45a049;
-}
-
-/* Desktop styling */
-@media (min-width: 766px) {
-	label {
-		margin-bottom: 4px;
-	}
-
-	/* Creating a flex container for two inline inputs */
-	.input-group {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	/* Adjusting the widths for inline inputs */
-	.input-group input[type="text"],
-	.input-group input[type="email"] {
-		width: 48%; /* slightly less than half to accommodate for spacing */
-	}
-}
