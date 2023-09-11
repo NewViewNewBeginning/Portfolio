@@ -423,21 +423,23 @@ footer p {
 .proj-container {
 	display: grid;
 	gap: 1rem;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 .proj {
-	min-height: 350px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 	border-left: 2px solid var(--cta);
-	padding: 2rem;
+	padding: 1rem;
 	border-radius: 2rem;
 	-webkit-border-radius: 2rem;
 	-moz-border-radius: 2rem;
 	-ms-border-radius: 2rem;
 	-o-border-radius: 2rem;
+}
+.proj h3 {
+	height: 150px;
 }
 .proj img {
 	max-width: 100%;
@@ -583,6 +585,12 @@ textarea:-moz-autofill {
 	.btn,
 	.submit-btn {
 		width: 10rem;
+	}
+}
+
+@media (max-width: 444px) {
+	.proj h3 {
+		height: 85px;
 	}
 }
 
