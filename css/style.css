@@ -6,7 +6,7 @@
 	--trasparent-bg: rgba(37, 43, 72, 0.6);
 	/* Skills slider with icons */
 	--marquee-width: 100%;
-	--marquee-height: 40vh;
+	--marquee-height: 30vh;
 	--marquee-elements-displayed: 3;
 	--marquee-element-width: calc(
 		var(--marquee-width) / var(--marquee-elements-displayed)
