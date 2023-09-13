@@ -439,6 +439,9 @@ section .home {
 	background: url(../media/images/skills-bg.webp) no-repeat center center /
 		cover;
 }
+.skills p {
+	margin-bottom: 1rem;
+}
 /* Skills slider with icons */
 .marquee {
 	width: var(--marquee-width);
