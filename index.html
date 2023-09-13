@@ -14,17 +14,19 @@
 </head>
 
 <body>
-
+    <a href="#home" class="skip-link" aria-label="Skip navigation and go to main content">Skip to main
+        content</a>
     <!-- Start Header Section -->
 
     <header>
-        <a class="logo-link" href="#home"><img class="logo-img" src="./media/icons/logo.png" alt=""></a>
+        <a class="logo-link" href="#home"><img class="logo-img" src="./media/icons/logo.png"
+                alt="My personal Logo image with my initialm MK and Laptop with stars around it"></a>
 
-        <i class="fa-solid fa-bars ham-menu"></i>
-        <i class="fa-solid fa-xmark ham-menu"></i>
+        <i class="fa-solid fa-bars ham-menu" aria-label="Open Mobile Menu"></i>
+        <i class="fa-solid fa-xmark ham-menu" aria-label="Close Mobile Menu"></i>
 
 
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation">
             <a href="#about">About</a>
             <a href="#education">Education</a>
             <a href="#skills">Skills</a>
@@ -40,7 +42,8 @@
     <!-- Home Section -->
 
     <section class="home wrapper" id="home">
-        <img class="home-img" src="./media/images/home-me.webp" alt="Myself">
+        <img class="home-img" src="./media/images/home-me.webp"
+            alt="Futuristic graphic of myself with lines and dots representing virtual connections">
         <div class="home-text">
             <h1>Hello! I'm <span class="letter-accent">M</span>ichal <br>Frontend Developer</h1>
             <p>Once upon a digital time, I embarked on a journey to redefine web experiences. Welcome to the tale.</p>
@@ -49,8 +52,10 @@
                 <a class="btn" href="#contact">Contact Me</a>
             </div>
             <div class="icons-wrapper">
-                <a href="https://github.com/NewViewNewBeginning"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/krawczykmichalmk/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/NewViewNewBeginning"><i class="fa-brands fa-github"
+                        aria-label="Visit my GitHub profile"></i></a>
+                <a href="https://www.linkedin.com/in/krawczykmichalmk/"><i class="fa-brands fa-linkedin"
+                        aria-label="Visit my Linkedin profile"></i></a>
             </div>
         </div>
     </section>
