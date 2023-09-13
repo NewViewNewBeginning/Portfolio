@@ -44,6 +44,12 @@ a {
 	color: var(--text-main);
 }
 
+/* Focus when use keyboard */
+:focus {
+	outline: 3px solid var(--cta);
+	outline-offset: 2px;
+}
+
 /* Start Headers/Text Sizes */
 p,
 a,
