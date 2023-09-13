@@ -1,11 +1,9 @@
 /* !!!!!>>> Main Color Variables to be used on site <<<!!!!! */
-
 :root {
 	--text-main: #d5ffe4;
 	--bg-main: #252b48;
 	--cta: #00ff22;
 	--trasparent-bg: rgba(37, 43, 72, 0.6);
-
 	/* Skills slider with icons */
 	--marquee-width: 100%;
 	--marquee-height: 40vh;
@@ -163,13 +161,50 @@ header {
 
 .logo-img {
 	width: 60%;
-	border: 3px solid #00ff22;
-	padding: 3%;
+	border: 2px solid #00ff22;
+	padding: 2%;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
+	transition: transform 0.9s;
+	-webkit-transition: transform 0.9s;
+	-moz-transition: transform 0.9s;
+	-ms-transition: transform 0.9s;
+	-o-transition: transform 0.9s;
+}
+
+@keyframes logoHoverAnimation {
+	0% {
+		transform: scale(1);
+		border-color: var(--bg-main);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+	}
+	50% {
+		transform: scale(0.7);
+		border-color: var(--text-main);
+		-webkit-transform: scale(0.7);
+		-moz-transform: scale(0.7);
+		-ms-transform: scale(0.7);
+		-o-transform: scale(0.7);
+	}
+	100% {
+		transform: scale(1.1);
+		border-color: var(--cta);
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		-o-transform: scale(1.1);
+	}
+}
+
+.logo-img:hover {
+	animation: logoHoverAnimation 1s forwards;
+	-webkit-animation: logoHoverAnimation 1s forwards;
 }
 
 .letter-accent {
@@ -665,7 +700,7 @@ textarea:-moz-autofill {
 		--marquee-width: 100%;
 		--marquee-height: 40vh;
 		/* --marquee-elements: 12; */ /* defined with JavaScript */
-		--marquee-elements-displayed: 4;
+		--marquee-elements-displayed: 5;
 	}
 
 	/* Projects Section */
