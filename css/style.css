@@ -555,6 +555,43 @@ section .home {
 	-o-border-radius: 5px;
 }
 
+/* Modals Projects*/
+
+.modal {
+	display: none;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 9999; /* High z-index to ensure it's above other content */
+	overflow-y: auto; /* Scroll inside modal if content overflows */
+}
+
+.modal-content {
+	max-width: 800px; /* Example width, adjust as necessary */
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	background-color: #fefefe;
+}
+
+.close-btn {
+	color: var(--text-main);
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+	color: var(--cta);
+	text-decoration: none;
+	cursor: pointer;
+}
+#modalImage {
+	max-width: 100%;
+}
+
 /* ----->>>> End Projects Section <<<<----- */
 
 /* ------------------------------------------ */
