@@ -57,10 +57,7 @@ h1 {
 }
 h2 {
 	font-size: 1.5rem;
-	border-left: 3px solid var(--cta);
 	margin: 1rem 0;
-	padding-left: 0.5rem;
-	border-left: 2px solid var(--cta);
 	border-radius: 1rem;
 	-webkit-border-radius: 1rem;
 	-moz-border-radius: 1rem;
@@ -754,6 +751,9 @@ textarea:-moz-autofill {
 	/* Projects Section */
 	.proj-container {
 		grid-template-columns: repeat(3, 1fr);
+	}
+	.projects .btn-section {
+		padding-top: 3rem;
 	}
 
 	/* Contact Section */
