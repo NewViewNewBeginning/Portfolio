@@ -560,33 +560,46 @@ section .home {
 .modal {
 	display: none;
 	position: fixed;
-	bottom: 0;
-
+	top: 0;
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	background-color: var(--bg-main);
 	z-index: 99;
+	margin: 0 auto;
 }
 .modal-content {
-	margin: 5% auto;
-	padding: 20px;
+	padding: 1rem 2rem;
+	margin-top: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }
 
 .close-btn {
+	position: absolute;
+	top: 0;
+	right: 2%;
 	color: var(--text-main);
-	float: right;
-	font-size: 28px;
+
+	font-size: 3rem;
 	font-weight: bold;
 }
 
 .close-btn:hover,
 .close-btn:focus {
 	color: var(--cta);
-	text-decoration: none;
 	cursor: pointer;
 }
 #modalImage {
-	max-width: 100%;
+	width: 100%;
+	border-radius: 5px;
+	margin-bottom: 3rem;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
 }
 
 /* ----->>>> End Projects Section <<<<----- */
