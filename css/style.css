@@ -561,20 +561,20 @@ section .home {
 	display: none;
 	position: fixed;
 	top: 0;
+	bottom: 0;
 	width: 100%;
 	min-height: 100vh;
 	background-color: var(--bg-main);
 	z-index: 99;
-	margin: 0 auto;
+	overflow-y: auto;
 }
 .modal-content {
-	padding: 1rem 2rem;
-	margin-top: 3rem;
+	padding: 0.5rem 1rem;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
 }
 
 .close-btn {
@@ -582,8 +582,7 @@ section .home {
 	top: 0;
 	right: 2%;
 	color: var(--text-main);
-
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: bold;
 }
 
@@ -594,8 +593,8 @@ section .home {
 }
 #modalImage {
 	width: 100%;
+	padding: 1rem 0;
 	border-radius: 5px;
-	margin-bottom: 3rem;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
@@ -824,6 +823,16 @@ textarea:-moz-autofill {
 	}
 	.projects .btn-section {
 		padding-top: 3rem;
+	}
+
+	#modalText {
+		max-width: 70ch;
+	}
+	#modalImage {
+		max-width: 600px;
+	}
+	.close-btn {
+		right: 10%;
 	}
 
 	/* Contact Section */
