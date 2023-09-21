@@ -33,8 +33,9 @@ const projectsData = [
 		title: "Find-The-Beat - Musical Memory Game",
 		image: "./media/icons/projects/pro5.webp",
 		text: "Find-The-Beat is a unique blend of music and memory, conceived during a hackathon challenge. I took the lead in designing the visual and structural elements, handling the HTML and CSS, while also contributing to the JavaScript component. The game introduces players to a board embedded with beats, challenging their memory retention capabilities. Features like varying levels of difficulty and a reset option add layers of engagement. Though the game isn't fully operational, the journey of bringing it to life offered invaluable insights into collaborative development and problem-solving.",
-		link: "#",
-		ghLink: "",
+		link: "https://newviewnewbeginning.github.io/Find-The-Beat/",
+		ghLink:
+			"https://github.com/NewViewNewBeginning/Find-The-Beat/settings/pages",
 	},
 	{
 		title: "Sip 'N Relax - The Virtual Coffee Experience",
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			document.getElementById("modalImage").src = projectsData[index].image;
 			document.getElementById("modalText").innerText = projectsData[index].text;
 			document.getElementById("modalLink").href = projectsData[index].link;
+			document.getElementById("ghLink").href = projectsData[index].ghLink;
 			modal.style.display = "block";
 			body.style.overflow = "hidden"; // Prevent scrolling when modal is open
 		});
