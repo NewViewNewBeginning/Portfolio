@@ -887,3 +887,24 @@ textarea:-moz-autofill {
 }
 
 /* End of Styles */
+
+/* 404 page bg */
+
+.page-404 {
+	position: relative;
+	background: url(../media/images/404-bg.webp) no-repeat center center / cover;
+	overflow: hidden;
+}
+.page-404 h1,
+.page-404 p {
+	z-index: 10;
+}
+.page-404::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--trasparent-bg);
+}
