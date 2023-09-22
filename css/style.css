@@ -877,6 +877,13 @@ textarea:-moz-autofill {
 	footer .fa-brands {
 		font-size: 2rem;
 	}
+	.page-404 {
+		flex-direction: column;
+	}
+	.page-404 p {
+		padding: 1rem 0;
+		max-width: 60ch;
+	}
 }
 
 /* End of Styles */
