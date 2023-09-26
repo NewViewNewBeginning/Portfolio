@@ -330,7 +330,14 @@
                     <button class="submit-btn" type="submit" value="Submit">Submit</button>
                     <a class="btn" href="#home">Back to top</a>
                 </div>
+
             </form>
+            <?php
+            if (isset($_SESSION['message'])) {
+                echo "<div class='message'>" . $_SESSION['message'] . "</div>";
+                unset($_SESSION['message']);
+            }
+            ?>
         </div>
     </section>
     <!-- End Contact -->
