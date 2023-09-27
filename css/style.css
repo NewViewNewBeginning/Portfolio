@@ -686,13 +686,17 @@ textarea:is(:focus, :valid) ~ label {
 	position: absolute;
 	top: 0;
 	left: 0;
-	translate: 10px 10px;
+	transform: translate(10px, 10px);
 	pointer-events: none;
 	transition: 0.5s;
 	-webkit-transition: 0.5s;
 	-moz-transition: 0.5s;
 	-ms-transition: 0.5s;
 	-o-transition: 0.5s;
+	-webkit-transform: translate(10px, 10px);
+	-moz-transform: translate(10px, 10px);
+	-ms-transform: translate(10px, 10px);
+	-o-transform: translate(10px, 10px);
 }
 
 /* Change the white text for autofilled input */
@@ -875,7 +879,7 @@ textarea:-moz-autofill {
 		margin-top: -1px;
 	}
 	.input-box label {
-		translate: 14px 14px;
+		transform: translate(14px, 14px);
 	}
 
 	.input-group .input-box {
