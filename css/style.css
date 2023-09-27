@@ -668,11 +668,11 @@ textarea:is(:focus, :valid) {
 }
 .input-box input:is(:focus, :valid) ~ label,
 textarea:is(:focus, :valid) ~ label {
-	transform: translateX(0.5rem) translateY(-1.5rem);
-	-webkit-transform: translateX(0.5rem) translateY(-1.5rem);
-	-moz-transform: translateX(0.5rem) translateY(-1.5rem);
-	-ms-transform: translateX(0.5rem) translateY(-1.5rem);
-	-o-transform: translateX(0.5rem) translateY(-1.5rem);
+	transform: translateX(1rem) translateY(-0.9rem);
+	-webkit-transform: translateX(1rem) translateY(-0.9rem);
+	-moz-transform: translateX(1rem) translateY(-0.9rem);
+	-ms-transform: translateX(1rem) translateY(-0.9rem);
+	-o-transform: translateX(1rem) translateY(-0.9rem);
 	color: var(--cta);
 	background: var(--bg-main);
 	border-left: 2px solid var(--cta);
@@ -876,10 +876,10 @@ textarea:-moz-autofill {
 	.input-box input:is(:focus, :valid) ~ label,
 	textarea:is(:focus, :valid) ~ label {
 		font-size: 0.8rem;
-		margin-top: -1px;
+		margin-top: 3px;
 	}
 	.input-box label {
-		transform: translate(14px, 14px);
+		margin-top: 3px;
 	}
 
 	.input-group .input-box {
