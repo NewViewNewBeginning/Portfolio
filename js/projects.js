@@ -51,15 +51,40 @@ document.addEventListener("DOMContentLoaded", () => {
 	const modal = document.getElementById("projectModal");
 	const closeBtn = document.querySelector(".close-btn");
 	const projects = document.querySelectorAll(".proj");
+	const toggleTextBtn = document.getElementById("toggleTextBtn");
+	const textSpan = document.getElementById("textSpan");
+
+	toggleTextBtn.addEventListener("click", () => {
+		const isTruncated = textSpan.getAttribute("data-truncated") === "true";
+
+		if (isTruncated) {
+			textSpan.innerText = textSpan.getAttribute("data-full-text");
+			toggleTextBtn.innerText = "...Read Less";
+			textSpan.setAttribute("data-truncated", "false");
+		} else {
+			textSpan.innerText = textSpan.getAttribute("data-truncated-text");
+			toggleTextBtn.innerText = "Read More";
+			textSpan.setAttribute("data-truncated", "true");
+		}
+	});
 
 	projects.forEach((project, index) => {
 		project.addEventListener("click", () => {
+			const truncatedText = projectsData[index].text.slice(0, 400) + "...";
+
+			textSpan.setAttribute("data-full-text", projectsData[index].text);
+			textSpan.setAttribute("data-truncated-text", truncatedText);
+			textSpan.setAttribute("data-truncated", "true");
+
+			textSpan.innerText = truncatedText;
+			toggleTextBtn.style.display = "inline"; // Show the toggle button
+
 			document.getElementById("modalTitle").innerText =
 				projectsData[index].title;
 			document.getElementById("modalImage").src = projectsData[index].image;
-			document.getElementById("modalText").innerText = projectsData[index].text;
 			document.getElementById("modalLink").href = projectsData[index].link;
 			document.getElementById("ghLink").href = projectsData[index].ghLink;
+
 			modal.style.display = "block";
 			body.style.overflow = "hidden"; // Prevent scrolling when modal is open
 		});
