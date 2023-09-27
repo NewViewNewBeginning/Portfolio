@@ -429,6 +429,9 @@ section .home {
 .about {
 	background: url(../media/images/about-bg.webp) no-repeat center center / cover;
 }
+.about p {
+	margin-bottom: 1rem;
+}
 /* ----->>>> End About Section <<<<----- */
 
 /* ------------------------------------------- */
