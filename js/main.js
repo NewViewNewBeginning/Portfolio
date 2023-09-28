@@ -94,3 +94,58 @@ document.addEventListener("DOMContentLoaded", function () {
 	const hiddenElements = document.querySelectorAll(".wrapper");
 	hiddenElements.forEach(el => observer.observe(el));
 });
+
+// Form Validation
+
+document.addEventListener("DOMContentLoaded", () => {
+	const form = document.querySelector("form");
+
+	form.addEventListener("submit", event => {
+		let isValid = true; // This variable will track the overall form validation state
+
+		// Name, Surname, and Subject Validation
+		const textInputs = form.querySelectorAll('input[type="text"]');
+		textInputs.forEach(input => {
+			const label = form.querySelector(`label[for="${input.id}"]`);
+			if (/^[a-zA-Z][a-zA-Z\s]*$/.test(input.value.trim()) === false) {
+				input.placeholder = "Invalid input !";
+				input.value = "";
+				label.classList.add("error");
+				isValid = false;
+			} else {
+				label.classList.remove("error");
+			}
+		});
+
+		// Email Validation
+		const emailInput = form.querySelector('input[type="email"]');
+		const emailLabel = form.querySelector('label[for="email"]');
+		const emailPattern = /^[^\W\d_](?:[a-zA-Z\d._-]+)@[a-zA-Z\d.-]{4,}$/;
+		if (
+			emailPattern.test(emailInput.value.trim()) === false ||
+			emailInput.value.trim().length < 10
+		) {
+			emailInput.placeholder = "Invalid Email !";
+			emailInput.value = "";
+			emailLabel.classList.add("error");
+			isValid = false;
+		} else {
+			emailLabel.classList.remove("error");
+		}
+
+		// Message Validation
+		const messageTextarea = form.querySelector("textarea");
+		const messageLabel = form.querySelector('label[for="message"]');
+		if (messageTextarea.value.trim().length === 0) {
+			messageTextarea.placeholder = "Message cannot be empty";
+			messageLabel.classList.add("error");
+			isValid = false;
+		} else {
+			messageLabel.classList.remove("error");
+		}
+
+		if (isValid === false) {
+			event.preventDefault(); // Prevent form submission if there are validation errors
+		}
+	});
+});

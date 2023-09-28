@@ -682,6 +682,25 @@ textarea:is(:focus, :valid) ~ label {
 	font-size: 0.6rem;
 }
 
+.input-box label.error {
+	transform: translateX(1rem) translateY(-0.9rem);
+	-webkit-transform: translateX(1rem) translateY(-0.9rem);
+	-moz-transform: translateX(1rem) translateY(-0.9rem);
+	-ms-transform: translateX(1rem) translateY(-0.9rem);
+	-o-transform: translateX(1rem) translateY(-0.9rem);
+	color: red;
+	background: var(--text-main);
+	border-left: 2px solid var(--cta);
+	border-right: 2px solid var(--cta);
+	margin-top: 6px;
+	padding: 0 0.5rem;
+	font-size: 0.6rem;
+}
+input::placeholder {
+	background-color: var(--trasparent-bg);
+	color: orangered;
+}
+
 .input-box label {
 	position: absolute;
 	top: 0;
