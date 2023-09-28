@@ -306,7 +306,7 @@
     <section class="contact" id="contact">
         <div class="wrapper">
             <h2>Contact Me</h2>
-            <form action="form_process.php" method="POST">
+            <form action="form_process.php" method="POST" id="contact-form">
                 <div class="input-group">
                     <div class="input-box">
                         <input type="text" id="name" name="name" required>
@@ -335,6 +335,7 @@
                     <textarea id="message" name="message" rows="6" required></textarea>
                     <label for="message">Your Message:</label>
                 </div>
+                <div id="success-message" style="display:none;"></div>
                 <div class="btn-section">
                     <button class="submit-btn" type="submit" value="Submit">Submit</button>
                     <a class="btn" href="#home">Back to top</a>

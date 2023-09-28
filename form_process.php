@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_regenerate_id(true);  // Regenerate session ID to prevent session fixation
 
 // Function to check against any email injection attempts
 function IsInjected($str) {
@@ -33,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = 'All fields are required.';
     }
 
-    if ($name[0] == '@' || $name[0] == '!' || $name[0] == '#' || $name[0] == '$' || $name[0] == '%') {
+    if (preg_match('/^[!@#$%^&*]/', $name)) {
         $errors[] = 'Invalid character at the start of the name.';
     }
 
-    if ($surname[0] == '@' || $surname[0] == '!' || $surname[0] == '#' || $surname[0] == '$' || $surname[0] == '%') {
+    if (preg_match('/^[!@#$%^&*]/', $surname)) {
         $errors[] = 'Invalid character at the start of the surname.';
     }
 
@@ -49,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (count($errors) > 0) {
         $_SESSION['message'] = implode('<br>', $errors);
-        header('Location: index.html');
+        header('Location: index.php');
         exit();
     }
 
@@ -67,11 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Redirect back to the form page
-    header('Location: index.html');
+    header('Location: index.php');
     exit();
 }
 
 ?>
+
 
 <!-- Sip n relax php -->
 <!-- <?php

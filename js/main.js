@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
 	const form = document.querySelector("form");
+	const successMessage = document.getElementById("success-message");
 
 	form.addEventListener("submit", event => {
 		let isValid = true; // This variable will track the overall form validation state
@@ -146,6 +147,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if (isValid === false) {
 			event.preventDefault(); // Prevent form submission if there are validation errors
+		} else {
+			// If validation passes, submit the form via AJAX
+			event.preventDefault(); // Prevent traditional form submission
+			const formData = new FormData(form);
+
+			fetch("form_process.php", {
+				method: "POST",
+				body: formData,
+			})
+				.then(response => response.json())
+				.then(data => {
+					if (data.success) {
+						form.reset(); // Reset the form fields
+						successMessage.innerText =
+							"Query was sent successfully, please wait for a response.";
+						successMessage.style.display = "block";
+					} else {
+						// Handle server-side validation errors here if necessary
+						// This is a placeholder for server-side validation error handling
+						const errorMessage = data.errors.join(", ");
+						alert("Submission failed: " + errorMessage);
+					}
+				})
+				.catch(error => {
+					console.error("Error:", error);
+				});
 		}
+	});
+
+	// Hide the success message when any input field is clicked
+	const inputs = form.querySelectorAll("input, textarea");
+	inputs.forEach(input => {
+		input.addEventListener("focus", function () {
+			successMessage.style.display = "none";
+		});
 	});
 });
