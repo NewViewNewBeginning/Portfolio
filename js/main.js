@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				isValid = false;
 			} else {
 				label.classList.remove("error");
+				input.placeholder = ""; // Reset the placeholder
 			}
 		});
 
@@ -132,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			isValid = false;
 		} else {
 			emailLabel.classList.remove("error");
+			emailInput.placeholder = ""; // Reset the placeholder
 		}
 
 		// Message Validation
@@ -143,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			isValid = false;
 		} else {
 			messageLabel.classList.remove("error");
+			messageTextarea.placeholder = ""; // Reset the placeholder
 		}
 
 		if (isValid === false) {

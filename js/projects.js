@@ -43,7 +43,7 @@ const projectsData = [
 		title: "Sip 'N Relax - The Virtual Coffee Experience",
 		image: "./media/icons/projects/pro6.webp",
 		text: "Sip 'N Relax embodies my most recent venture, meticulously crafted as part of the CDETB Traineeship program. Birthed from a blank canvas, this project encapsulates the entire lifecycle: from conceptualization and design to construction. Designed to mirror the essence of a real-world coffee shop, the website offers visitors an authentic experience, complete with an operational contact form and accurate, up-to-date information. Through this endeavor, I further honed my proficiency in HTML, CSS, and JavaScript. The journey also introduced me to the nuances of deploying live on a server and integrating PHP functionalities, marking a significant milestone in my continuous learning trajectory.",
-		link: "https://newviewnewbeginning.github.io/SipNRelax/",
+		link: "https://www.michal-krawczyk.com/sipnrelax/",
 		ghLink: "https://github.com/NewViewNewBeginning/SipNRelax",
 	},
 ];
