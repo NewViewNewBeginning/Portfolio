@@ -1,7 +1,4 @@
 <?php
-session_start();
-session_regenerate_id(true);  // Regenerate session ID to prevent session fixation
-
 // Function to check against any email injection attempts
 function IsInjected($str) {
     $injections = array('(\n+)', '(\r+)', '(\t+)', '(%0A+)', '(%0D+)', '(%08+)', '(%09+)');
@@ -48,93 +45,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = 'Invalid or non-existent email domain.';
     }
 
+    // Initialize an empty array to hold the response
+    $response = [];
+
     if (count($errors) > 0) {
-        $_SESSION['message'] = implode('<br>', $errors);
-        header('Location: index.php');
-        exit();
-    }
-
-    // Prepare email
-    $recipient = 'michalkrawczyk666@wp.pl';
-    $headers = "From: $name $surname <$email>\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $body = "Name: $name $surname\nEmail: $email\nSubject: $subject\nMessage:\n$message";
-
-    // Send email
-    if (mail($recipient, $subject, $body, $headers)) {
-        $_SESSION['message'] = 'Thank you, your message has been sent!';
+        // If there are errors, set success to false and add error messages to the response
+        $response['success'] = false;
+        $response['errors'] = $errors;
     } else {
-        $_SESSION['message'] = 'Oops, something went wrong. Please try again.';
+        // Prepare email
+        $recipient = 'michalkrawczyk666@wp.pl';
+        $headers = "From: $name $surname <$email>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $body = "Name: $name $surname\nEmail: $email\nSubject: $subject\nMessage:\n$message";
+
+        // If email is sent successfully, set success to true and add a success message to the response
+        if (mail($recipient, $subject, $body, $headers)) {
+            $response['success'] = true;
+            $response['message'] = 'Thank you, your message has been sent!';
+        } else {
+            $response['success'] = false;
+            $response['errors'] = ['Oops, something went wrong. Please try again.'];
+        }
     }
 
-    // Redirect back to the form page
-    header('Location: index.php');
-    exit();
+    // Encode the response array as JSON and output it
+    echo json_encode($response);
 }
-
 ?>
-
-
-<!-- Sip n relax php -->
-<!-- <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and validate first name
-    $firstName = filter_input(INPUT_POST, 'first-name', FILTER_SANITIZE_STRING);
-    if (empty($firstName)) {
-        die('Error: First name is required');
-    }
-
-    // Sanitize and validate last name
-    $lastName = filter_input(INPUT_POST, 'last-name', FILTER_SANITIZE_STRING);
-    if (empty($lastName)) {
-        die('Error: Last name is required');
-    }
-
-    // Sanitize and validate email
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die('Error: Invalid email format');
-    }
-
-    // Sanitize and validate phone
-    $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-    if (empty($phone)) {
-        die('Error: Phone number is required');
-    }
-
-    // Sanitize and validate subject
-    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
-    if (empty($subject)) {
-        die('Error: Subject is required');
-    }
-
-    // Sanitize and validate message
-    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
-    if (empty($message)) {
-        die('Error: Message is required');
-    }
-
-    // Email structure
-    $to = "michalkrawczyk666@wp.pl";
-    $headers = "From: $email\r\n";
-    $email_subject = "New form submission: $subject";
-    $email_body = "You have received a new message from $firstName $lastName.\n".
-                    "Here are the details:\n\n".
-                    "First Name: $firstName\n".
-                    "Last Name: $lastName\n".
-                    "Email: $email\n".
-                    "Phone: $phone\n".
-                    "Message:\n$message";
-
-    // Use wordwrap() if lines are longer than 70 characters
-    $email_body = wordwrap($email_body, 70, "\r\n");
-
-    // Send the email
-    if(!mail($to, $email_subject, $email_body, $headers)) {
-        die('Error: Unable to send email. Please try again later.');
-    }
-
-    // Redirect to a thank you page
-    header("Location: html/thank-you.html");
-}
-?> -->
