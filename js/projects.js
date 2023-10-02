@@ -8,7 +8,7 @@ const projectsData = [
 		image: "./media/icons/projects/pro1.webp",
 		text: "As one of my very first forays into the realm of web development, this project holds a special place in my portfolio. Built under the mentorship of DevMentor.pl, it stands as a testament to my foundational skills and eager approach to learning. Despite being an early endeavor, the website showcases my commitment to creating responsive designs, aptly optimized for various devices through the use of distinct CSS files. My hands-on experience with SVGs and image integrations ensures visuals that are both crisp and scalable. Furthermore, the addition of the gradient effect speaks volumes about my budding creativity, and my ambition to elevate even my initial projects with touches of contemporary aesthetics.",
 		link: "https://newviewnewbeginning.github.io/task-html-and-css-rwd/",
-		ghLink: "https://github.com/NewViewNewBeginning/task-html-and-css-rwd",
+		ghLink: "https://newviewnewbeginning.github.io/RWD-Task/",
 	},
 	{
 		title: "Juventus Football Club – A Responsive Tribute",
@@ -35,9 +35,8 @@ const projectsData = [
 		title: "Find-The-Beat - Musical Memory Game",
 		image: "./media/icons/projects/pro5.webp",
 		text: "Find-The-Beat is a unique blend of music and memory, conceived during a hackathon challenge. I took the lead in designing the visual and structural elements, handling the HTML and CSS, while also contributing to the JavaScript component. The game introduces players to a board embedded with beats, challenging their memory retention capabilities. Features like varying levels of difficulty and a reset option add layers of engagement. Though the game isn't fully operational, the journey of bringing it to life offered invaluable insights into collaborative development and problem-solving.",
-		link: "https://newviewnewbeginning.github.io/Find-The-Beat/",
-		ghLink:
-			"https://github.com/NewViewNewBeginning/Find-The-Beat/settings/pages",
+		link: "https://newviewnewbeginning.github.io/FindTheBeat-Continue/",
+		ghLink: "https://github.com/NewViewNewBeginning/FindTheBeat-Continue",
 	},
 	{
 		title: "Sip 'N Relax - The Virtual Coffee Experience",
