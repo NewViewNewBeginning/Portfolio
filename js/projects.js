@@ -7,8 +7,8 @@ const projectsData = [
 		title: "Early Endeavors in Web Design",
 		image: "./media/icons/projects/pro1.webp",
 		text: "As one of my very first forays into the realm of web development, this project holds a special place in my portfolio. Built under the mentorship of DevMentor.pl, it stands as a testament to my foundational skills and eager approach to learning. Despite being an early endeavor, the website showcases my commitment to creating responsive designs, aptly optimized for various devices through the use of distinct CSS files. My hands-on experience with SVGs and image integrations ensures visuals that are both crisp and scalable. Furthermore, the addition of the gradient effect speaks volumes about my budding creativity, and my ambition to elevate even my initial projects with touches of contemporary aesthetics.",
-		link: "https://newviewnewbeginning.github.io/task-html-and-css-rwd/",
-		ghLink: "https://newviewnewbeginning.github.io/RWD-Task/",
+		link: "https://newviewnewbeginning.github.io/RWD-Task/",
+		ghLink: "https://github.com/NewViewNewBeginning/RWD-Task",
 	},
 	{
 		title: "Juventus Football Club – A Responsive Tribute",

@@ -408,7 +408,8 @@ section .home {
 .icons-wrapper a:last-child {
 	margin-right: 0;
 }
-.fa-brands {
+.fa-brands,
+.download {
 	font-size: 2.5rem;
 	margin-top: 2rem;
 	transition: 0.4s;
@@ -418,7 +419,8 @@ section .home {
 	-o-transition: 0.4s;
 }
 
-.fa-brands:hover {
+.fa-brands:hover,
+.download:hover {
 	color: var(--cta);
 }
 /* ----->>>> End Home Section <<<<----- */
