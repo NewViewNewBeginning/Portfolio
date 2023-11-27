@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		body.style.overflow = "hidden";
 		setTimeout(() => {
 			modal.style.opacity = 1;
-		}, 10); // Delay to allow for display change
+		}, 100);
 	}
 
 	function hideModal() {
@@ -69,7 +69,23 @@ document.addEventListener("DOMContentLoaded", () => {
 		body.style.overflow = "";
 		setTimeout(() => {
 			modal.style.display = "none";
-		}, 500); // Delay matching transition duration
+		}, 500);
+	}
+	function expandText() {
+		textSpan.style.opacity = "0";
+		textSpan.innerText = textSpan.getAttribute("data-full-text");
+		textSpan.style.opacity = "1";
+		toggleTextBtn.innerText = "...Read Less";
+		textSpan.setAttribute("data-truncated", "false");
+	}
+
+	function collapseText() {
+		textSpan.style.opacity = "0";
+		textSpan.innerText = textSpan.getAttribute("data-truncated-text");
+		textSpan.style.opacity = "1";
+
+		toggleTextBtn.innerText = "Read More";
+		textSpan.setAttribute("data-truncated", "true");
 	}
 
 	// Event listener for the Read More/Read Less button
@@ -79,10 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			textSpan.innerText = textSpan.getAttribute("data-full-text");
 			toggleTextBtn.innerText = "...Read Less";
 			textSpan.setAttribute("data-truncated", "false");
+			expandText();
 		} else {
 			textSpan.innerText = textSpan.getAttribute("data-truncated-text");
 			toggleTextBtn.innerText = "Read More";
 			textSpan.setAttribute("data-truncated", "true");
+			collapseText();
 		}
 	});
 
