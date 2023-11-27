@@ -747,6 +747,11 @@ textarea:-moz-autofill {
 	color: var(--cta);
 }
 
+#success-message {
+	color: var(--cta);
+	font-size: 1.5rem;
+}
+
 /* ----->>>> End Contact Section <<<<----- */
 
 /* ------------------------------------------- */

@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					if (data.success) {
 						form.reset(); // Reset the form fields
 						successMessage.innerText =
-							"Query was sent successfully, please wait for a response.";
+							"Query was sent successfully, please wait for a response!";
 						successMessage.style.display = "block";
 					} else {
 						// Handle server-side validation errors here if necessary
