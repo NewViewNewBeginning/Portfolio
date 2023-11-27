@@ -56,18 +56,30 @@ document.addEventListener("DOMContentLoaded", () => {
 	const toggleTextBtn = document.getElementById("toggleTextBtn");
 	const textSpan = document.getElementById("textSpan");
 
+	function showModal() {
+		modal.style.display = "block";
+		body.style.overflow = "hidden";
+		setTimeout(() => {
+			modal.style.opacity = 1;
+		}, 10); // Delay to allow for display change
+	}
+
+	function hideModal() {
+		modal.style.opacity = 0;
+		body.style.overflow = "";
+		setTimeout(() => {
+			modal.style.display = "none";
+		}, 500); // Delay matching transition duration
+	}
+
 	// Event listener for the Read More/Read Less button
 	toggleTextBtn.addEventListener("click", () => {
-		// Checking if the text is currently truncated
 		const isTruncated = textSpan.getAttribute("data-truncated") === "true";
-
 		if (isTruncated) {
-			// If truncated, display full text and change button text to 'Read Less'
 			textSpan.innerText = textSpan.getAttribute("data-full-text");
 			toggleTextBtn.innerText = "...Read Less";
 			textSpan.setAttribute("data-truncated", "false");
 		} else {
-			// If not truncated, display truncated text and change button text to 'Read More'
 			textSpan.innerText = textSpan.getAttribute("data-truncated-text");
 			toggleTextBtn.innerText = "Read More";
 			textSpan.setAttribute("data-truncated", "true");
@@ -77,44 +89,32 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Looping through each project element and adding a click event listener
 	projects.forEach((project, index) => {
 		project.addEventListener("click", () => {
-			// Preparing truncated text
 			const truncatedText = projectsData[index].text.slice(0, 400) + "...";
-
-			// Setting attributes for the textSpan element
 			textSpan.setAttribute("data-full-text", projectsData[index].text);
 			textSpan.setAttribute("data-truncated-text", truncatedText);
 			textSpan.setAttribute("data-truncated", "true");
-
-			// Setting the initial truncated text and showing the Read More button
 			textSpan.innerText = truncatedText;
 			toggleTextBtn.style.display = "inline";
 
-			// Updating modal content with selected project data
 			document.getElementById("modalTitle").innerText =
 				projectsData[index].title;
 			document.getElementById("modalImage").src = projectsData[index].image;
 			document.getElementById("modalLink").href = projectsData[index].link;
 			document.getElementById("ghLink").href = projectsData[index].ghLink;
 
-			// Displaying the modal and preventing scrolling
-			modal.style.display = "block";
-			body.style.overflow = "hidden";
+			showModal();
 		});
 	});
 
 	// Event listener for the Close button
 	closeBtn.addEventListener("click", () => {
-		// Hiding the modal and allowing scrolling
-		modal.style.display = "none";
-		body.style.overflow = "";
+		hideModal();
 	});
 
 	// Event listener for clicking outside the modal to close it
 	window.addEventListener("click", event => {
 		if (event.target === modal) {
-			// Hiding the modal and allowing scrolling
-			modal.style.display = "none";
-			body.style.overflow = "";
+			hideModal();
 		}
 	});
 });

@@ -562,6 +562,11 @@ section .home {
 }
 
 /* Modals Projects*/
+#projectModal {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	display: none;
+}
 
 .modal {
 	display: none;
